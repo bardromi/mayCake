@@ -1,12 +1,15 @@
-import React, {Component} from 'react'
-import Nav  from './Navbar'
+import React from 'react'
+import Navbar from './Navbar';
+import Main from './Main'
 
-export default class App extends Component {
-    render() {
-        return (
-            <div>
-                <Nav/>
-            </div>
-        )
-    }
-}
+const App = () => (
+    <div>
+        <Navbar/>
+        <br/>
+        <div className="container">
+            <Main/>
+        </div>
+    </div>
+);
+
+export default App;
