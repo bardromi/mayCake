@@ -18,7 +18,7 @@ const UserAPI = {
                     resolve(user);
                 }
                 else {
-                    reject("not a user");
+                    reject(new Error("User name or Email is incorrect"));
                 }
             }
         });
