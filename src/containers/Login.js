@@ -16,7 +16,6 @@ class Login extends Component {
     }
 
     componentWillMount() {
-        this.props.flushErrors();
         if (this.props.auth.user) {
             this.props.history.push('/');
         }
@@ -26,6 +25,10 @@ class Login extends Component {
         if (nextProps.auth.user) {
             nextProps.history.push('/');
         }
+    }
+
+    componentWillUnmount() {
+        this.props.flushErrors();
     }
 
     signIn() {

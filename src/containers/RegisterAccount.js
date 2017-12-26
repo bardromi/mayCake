@@ -15,7 +15,6 @@ class RegisterAccount extends Component {
     }
 
     componentWillMount() {
-        this.props.flushErrors();
         if (this.props.auth.user) {
             this.props.history.push('/');
         }
@@ -25,6 +24,10 @@ class RegisterAccount extends Component {
         if (nextProps.auth.user) {
             nextProps.history.push('/');
         }
+    }
+
+    componentWillUnmount() {
+        this.props.flushErrors();
     }
 
     signUp() {
