@@ -1,3 +1,5 @@
-export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+export const AUTH_SUCCESS = 'LOGIN_SUCCESS';
+export const AUTH_LOADING = 'LOGIN_LOADING';
 export const LOGIN_FAILED = 'LOGIN_FAILED';
-export const LOGIN_LOADING = 'LOGIN_LOADING';
+export const REGISTER_FAILED = 'REGISTER_FAILED';
+export const FLUSH_ERRORS = 'FLUSH_ERRORS';

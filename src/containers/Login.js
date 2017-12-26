@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux';
-import {login} from '../actions/UserActions';
+import {login} from '../actions/Authentication';
+import {flushErrors} from '../actions/HelpersAction';
 
 
 class Login extends Component {
@@ -15,7 +16,7 @@ class Login extends Component {
     }
 
     componentWillMount() {
-        console.log(this.props.auth);
+        this.props.flushErrors();
         if (this.props.auth.user) {
             this.props.history.push('/');
         }
@@ -27,7 +28,7 @@ class Login extends Component {
         }
     }
 
-    SignIn() {
+    signIn() {
         const {email, password} = this.state;
         this.props.login(email, password);
     }
@@ -56,7 +57,7 @@ class Login extends Component {
                                        className="form-control"
                                        id="email"
                                        placeholder="Enter email"
-                                       style={this.props.auth.hasFailed ? errStyle : null}
+                                       style={this.props.auth.loginHasFailed ? errStyle : null}
                                        onChange={event => this.setState({email: event.target.value})}
                                 />
                             </div>
@@ -66,16 +67,16 @@ class Login extends Component {
                                        className="form-control"
                                        id="password"
                                        placeholder="Enter password"
-                                       style={this.props.auth.hasFailed ? errStyle : null}
+                                       style={this.props.auth.loginHasFailed ? errStyle : null}
                                        onChange={event => this.setState({password: event.target.value})}
                                 />
                             </div>
-                            <button type="button" className="btn btn-primary" onClick={() => this.SignIn()}>Submit
+                            <button type="button" className="btn btn-primary" onClick={() => this.signIn()}>Submit
                             </button>
                         </div>
-                        <div>{this.props.auth.hasFailed}</div>
+                        <div>{this.props.auth.loginHasFailed}</div>
                         <div>
-                            <Link to='/signup'>Sign up instead</Link>
+                            <Link to='/register'>Sign up instead</Link>
                         </div>
                     </div>
                 </div>
@@ -90,4 +91,4 @@ function mapStateToPops(store) {
     };
 }
 
-export default connect(mapStateToPops, {login})(Login);
+export default connect(mapStateToPops, {login, flushErrors})(Login);

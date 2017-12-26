@@ -1,13 +1,23 @@
-import {LOGIN_SUCCESS, LOGIN_LOADING, LOGIN_FAILED} from '../constants';
+import {
+    AUTH_SUCCESS,
+    AUTH_LOADING,
+    LOGIN_FAILED,
+    REGISTER_FAILED,
+    FLUSH_ERRORS
+} from '../constants';
 
 export default function (state = {}, action) {
     switch (action.type) {
-        case LOGIN_SUCCESS:
+        case AUTH_SUCCESS:
             return {...state, user: action.payload};
-        case LOGIN_LOADING:
+        case AUTH_LOADING:
             return {...state, isLoading: action.payload};
         case LOGIN_FAILED:
-            return {...state, hasFailed: action.payload};
+            return {...state, loginHasFailed: action.payload};
+        case REGISTER_FAILED:
+            return {...state, registerHasFailed: action.payload};
+        case FLUSH_ERRORS:
+            return {...state, loginHasFailed: null, registerHasFailed: null};
         default:
             return state;
     }
