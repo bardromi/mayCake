@@ -8,7 +8,7 @@ import {applyMiddleware, createStore} from 'redux';
 import thunk from 'redux-thunk';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
-import '../node_modules/bootstrap/dist/js/bootstrap';
+//import '../node_modules/bootstrap/dist/js/bootstrap';
 
 import App from './components/App'
 import reducers from './reducers/index';

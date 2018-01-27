@@ -4,7 +4,7 @@ import {
     LOGIN_FAILED,
     REGISTER_FAILED,
 } from '../constants';
-import UserAPI from '../api';
+import {UserAPI} from '../api';
 
 export function login(email, password) {
     return dispatch => {
@@ -27,27 +27,6 @@ export function login(email, password) {
     }
 }
 
-export function authSuccess(user) {
-    return {
-        type: AUTH_SUCCESS,
-        payload: user
-    };
-}
-
-export function loginFailed(err) {
-    return {
-        type: LOGIN_FAILED,
-        payload: err
-    };
-}
-
-export function authLoading(bool) {
-    return {
-        type: AUTH_LOADING,
-        payload: bool
-    };
-}
-
 export function register(email, password) {
     return dispatch => {
         dispatch(authLoading(true));
@@ -66,7 +45,28 @@ export function register(email, password) {
     }
 }
 
-export function registerFailed(bool) {
+function authSuccess(user) {
+    return {
+        type: AUTH_SUCCESS,
+        payload: user
+    };
+}
+
+function loginFailed(err) {
+    return {
+        type: LOGIN_FAILED,
+        payload: err
+    };
+}
+
+function authLoading(bool) {
+    return {
+        type: AUTH_LOADING,
+        payload: bool
+    };
+}
+
+function registerFailed(bool) {
     return {
         type: REGISTER_FAILED,
         payload: bool

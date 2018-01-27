@@ -1,7 +1,7 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
 import Login from '../containers/Login';
-import Home from './Home';
+import Home from '../containers/Home';
 import RegisterAccount from '../containers/RegisterAccount';
 
 // The Main component renders one of the three provided

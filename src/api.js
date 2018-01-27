@@ -1,4 +1,4 @@
-const UserAPI = {
+export const UserAPI = {
     users: [
         {number: 1, mail: "bar@bar.bar", password: "123"},
         {number: 2, mail: "a@a.a", password: "234"},
@@ -36,4 +36,65 @@ const UserAPI = {
     }
 };
 
-export default UserAPI;
+export const CakesAPI = {
+    cakes: [
+        {
+            id: 1,
+            category: "cake",
+            name: "Chocolate Cake",
+            img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAtutm6NaoBbTY5Vli75zaAWwwDKf7bfPecSBEhMHCvdSS3dJx"
+        },
+        {
+            id: 2,
+            category: "cake",
+            name: "Cheese Cake",
+            img: "http://img.taste.com.au/JykbG0mr/w643-h428-cfill-q90/taste/2016/11/new-york-cheesecake-40742-1.jpeg"
+        },
+        {
+            id: 3,
+            category: "cake",
+            name: "Black Cake",
+            img: "https://celebdear.com/wp-content/uploads/2017/01/0020236_choco_velvette_cake-2.jpeg"
+        },
+        {
+            id: 4,
+            category: "cake",
+            name: "White Cake",
+            img: "http://images.media-allrecipes.com/userphotos/960x960/4482234.jpg"
+        },
+        {
+            id: 5,
+            category: "cake",
+            name: "Oreo Cake",
+            img: "http://bakingbites.com/wp-content/uploads/2009/04/cookiecake.jpg"
+        },
+        {
+            id: 6,
+            category: "cake",
+            name: "Rainbow Cake",
+            img: "https://www.fergusonplarre.com.au/media/catalog/product/cache/1/image/550x/9df78eab33525d08d6e5fb8d27136e95/b/i/birthday-pinata-cake--inside.jpg"
+        },
+        {
+            id: 7,
+            category: "cake",
+            name: "Car Cake",
+            img: "https://www.howtocookthat.net/public_html/wp-content/uploads/2013/07/IMG_5481-550x412.jpg?x19907"
+        },
+        {
+            id: 8,
+            category: "cake",
+            name: "Heart Cake",
+            img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJCyKc8egRAPnAHDqG44hzsnY72YDR20atic_RdTuApAecxaVz"
+        },
+    ],
+    all: function(){
+        return new Promise((resolve,reject) => {
+            if(this.cakes){
+                resolve(this.cakes);
+            }
+            else {
+                reject(new Error("There is no Cakes"));
+            }
+        });
+    }
+};
