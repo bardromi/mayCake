@@ -3,3 +3,8 @@
 .fa-thumbs-up {
     color: blue;
 }
+
+.card-img-top {
+    height:200px;
+    max-width: 97%;
+}

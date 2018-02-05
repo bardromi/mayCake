@@ -7,7 +7,7 @@ const CakeCard = (props) => {
                 <h5 className="card-title text-center pt-2">Chocolate Cake</h5>
 
                 <a href="#">
-                    <img className="card-img-top"
+                    <img className="card-img-top ml-1"
                          src={props.cake.img}
                          alt={props.cake.name}/>
                 </a>
