@@ -78,7 +78,7 @@ export const CakesAPI = {
             id: 7,
             category: "cake",
             name: "Car Cake",
-            img: "https://www.howtocookthat.net/public_html/wp-content/uploads/2013/07/IMG_5481-550x412.jpg?x19907"
+            img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy0hYOjFHo5boh_0ULNtd4KG4Je_308pJUJk_505wmgTn8YkPU"
         },
         {
             id: 8,
