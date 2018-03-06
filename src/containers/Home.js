@@ -21,7 +21,6 @@ class Home extends Component {
             <div>
                 <div className="row">
                     <div className="card-deck">
-
                             {
                                 this.props.cake.cakes && this.props.cake.cakes.map((cake, index) => {
                                     return (
@@ -29,7 +28,6 @@ class Home extends Component {
                                     )
                                 })
                             }
-
                     </div>
                 </div>
             </div>
