@@ -5,15 +5,20 @@ import CakeCard from "../components/CakeCard";
 
 class Home extends Component {
 
+    // constructor(props) {
+    //     super(props);
+    //
+    //     this.state = {
+    //         isLoaded: false
+    //     }
+    // }
+
     componentWillMount() {
         this.props.getAllCakes();
     }
 
     render() {
-        console.log('cakes', this.props.cake.cakes);
-
-        if (this.props.cake.isLoading) {
-            console.log('Loading........................................');
+        if (this.props.cakes.isLoading !== false) {
             return <p>Loading...</p>
         }
 
@@ -21,13 +26,13 @@ class Home extends Component {
             <div>
                 <div className="row">
                     <div className="card-deck">
-                            {
-                                this.props.cake.cakes && this.props.cake.cakes.map((cake, index) => {
-                                    return (
-                                        <CakeCard key={index} cake={cake}/>
-                                    )
-                                })
-                            }
+                        {
+                            this.props.cakes.cakes && this.props.cakes.cakes.map((cake, index) => {
+                                return (
+                                    <CakeCard key={index} cake={cake}/>
+                                )
+                            })
+                        }
                     </div>
                 </div>
             </div>
@@ -37,7 +42,7 @@ class Home extends Component {
 
 function mapStateToProps(store) {
     return {
-        cake: store.cake
+        cakes: store.cakes
     };
 }
 

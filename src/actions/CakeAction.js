@@ -1,15 +1,38 @@
-import {CAKE_SUCCESS, CAKE_FAILED, CAKE_LOADING} from '../constants';
+import {CAKES_SUCCESS, CAKES_FAILED, CAKES_LOADING,CAKE_SUCCESS, CAKE_FAILED, CAKE_LOADING} from '../constants';
 import {CakesAPI} from "../api";
 
 export function getAllCakes() {
     return dispatch => {
-        dispatch(cakeLoading(true));
+        dispatch(cakesLoading(true));
 
         CakesAPI.all()
+            // .then(cakes => {
+            //     setTimeout(() => {
+            //         dispatch(cakeSuccess(cakes));
+            //     }, 0);
+            // })
+            .then(cakes => {
+                dispatch(cakesSuccess(cakes));
+            })
+            .then(() => {
+                dispatch(cakesFailed(null));
+                dispatch(cakesLoading(false));
+            })
+            .catch(err => {
+                dispatch(cakesFailed(err.message));
+                dispatch(cakesLoading(false));
+            })
+    }
+}
+
+export function getCakeById(id) {
+    return dispatch => {
+        dispatch(cakeLoading(true));
+
+        CakesAPI.get(id)
             .then(cake => {
-                setTimeout(() => {
-                    dispatch(cakeSuccess(cake));
-                }, 0);
+                dispatch(cakeSuccess(cake));
+                console.log("c",cake);
             })
             .then(() => {
                 dispatch(cakeFailed(null));
@@ -22,6 +45,27 @@ export function getAllCakes() {
     }
 }
 
+function cakesLoading(bool) {
+    return {
+        type: CAKES_LOADING,
+        payload: bool
+    };
+}
+
+function cakesSuccess(cakes) {
+    return {
+        type: CAKES_SUCCESS,
+        payload: cakes
+    };
+}
+
+function cakesFailed(err) {
+    return {
+        type: CAKES_FAILED,
+        payload: err
+    };
+}
+
 function cakeLoading(bool) {
     return {
         type: CAKE_LOADING,
@@ -29,10 +73,10 @@ function cakeLoading(bool) {
     };
 }
 
-function cakeSuccess(cakes) {
+function cakeSuccess(cake) {
     return {
         type: CAKE_SUCCESS,
-        payload: cakes
+        payload: cake
     };
 }
 

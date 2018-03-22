@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 const CakeCard = (props) => {
-    console.log(props.cake);
+    // console.log(props.cake);
     return (
         <div className="col-md-3">
             <div className="card mb-5">

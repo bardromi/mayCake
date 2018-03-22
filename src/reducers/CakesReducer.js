@@ -1,12 +1,13 @@
-import {CAKE_SUCCESS, CAKE_LOADING, CAKE_FAILED, FLUSH_ERRORS} from '../constants';
+import {CAKES_SUCCESS, CAKES_LOADING, CAKES_FAILED, FLUSH_ERRORS} from '../constants';
 
 export default function (state = {}, action) {
     switch (action.type) {
-        case CAKE_SUCCESS:
-            return {...state, cake: action.payload};
-        case CAKE_LOADING:
+        case CAKES_SUCCESS:
+            console.log("cakes");
+            return {...state, cakes: action.payload};
+        case CAKES_LOADING:
             return {...state, isLoading: action.payload};
-        case CAKE_FAILED:
+        case CAKES_FAILED:
             return {...state, failed: action.payload};
         case FLUSH_ERRORS:
             return {...state, failed: null};

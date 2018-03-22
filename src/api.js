@@ -50,7 +50,7 @@ export const CakesAPI = {
             category: "cake",
             name: "Cheese Cake",
             img: "http://img.taste.com.au/JykbG0mr/w643-h428-cfill-q90/taste/2016/11/new-york-cheesecake-40742-1.jpeg",
-            likes:22
+            likes: 22
         },
         {
             id: 3,
@@ -95,14 +95,25 @@ export const CakesAPI = {
             likes: 1000
         },
     ],
-    all: function(){
-        return new Promise((resolve,reject) => {
-            if(this.cakes){
+    all: function () {
+        return new Promise((resolve, reject) => {
+            if (this.cakes) {
                 resolve(this.cakes);
             }
             else {
                 reject(new Error("There is no Cakes"));
             }
         });
+    },
+    get: function (id) {
+        return new Promise((resolve, reject) => {
+            if (this.cakes[id-1]) {
+                resolve(this.cakes[id-1])
+            }
+            else {
+                reject(new Error("Id does not exist!"));
+            }
+        })
+
     }
 };

@@ -1,12 +1,12 @@
 import {combineReducers} from 'redux';
-import user from './UserReducer';
 import auth from './AuthenticationReducer';
 import cake from './CakeReducer';
+import cakes from './CakesReducer';
 
 const rootReducer = combineReducers({
     auth,
-    user,
-    cake
+    cake,
+    cakes
 });
 
 export default rootReducer;
