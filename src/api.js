@@ -56,7 +56,7 @@ export const CakesAPI = {
             id: 3,
             category: "cake",
             name: "Black Cake",
-            img: "https://celebdear.com/wp-content/uploads/2017/01/0020236_choco_velvette_cake-2.jpeg",
+            img: "https://www.fergusonplarre.com.au/media/catalog/product/cache/1/image/370x/9df78eab33525d08d6e5fb8d27136e95/P/o/Polka-Dot-Shoe-Cake.jpg",
             likes: 123
         },
         {

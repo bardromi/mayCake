@@ -27,7 +27,7 @@ class CakePage extends Component {
 
 function mapStateToProps(store) {
     return {
-        cake: store.cake
+        cake: store.cakepage
     };
 }
 

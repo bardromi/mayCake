@@ -3,7 +3,6 @@ import {CAKES_SUCCESS, CAKES_LOADING, CAKES_FAILED, FLUSH_ERRORS} from '../const
 export default function (state = {}, action) {
     switch (action.type) {
         case CAKES_SUCCESS:
-            console.log("cakes");
             return {...state, cakes: action.payload};
         case CAKES_LOADING:
             return {...state, isLoading: action.payload};

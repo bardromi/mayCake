@@ -42,7 +42,7 @@ class Home extends Component {
 
 function mapStateToProps(store) {
     return {
-        cakes: store.cakes
+        cakes: store.home
     };
 }
 

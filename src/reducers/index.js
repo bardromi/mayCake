@@ -1,12 +1,12 @@
 import {combineReducers} from 'redux';
 import auth from './AuthenticationReducer';
-import cake from './CakeReducer';
-import cakes from './CakesReducer';
+import cakepage from './CakePageReducer';
+import home from './HomeReducer';
 
 const rootReducer = combineReducers({
     auth,
-    cake,
-    cakes
+    cakepage,
+    home
 });
 
 export default rootReducer;
