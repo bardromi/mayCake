@@ -32,7 +32,6 @@ export function getCakeById(id) {
         CakesAPI.get(id)
             .then(cake => {
                 dispatch(cakeSuccess(cake));
-                console.log("c",cake);
             })
             .then(() => {
                 dispatch(cakeFailed(null));
