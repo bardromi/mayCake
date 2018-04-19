@@ -15,7 +15,6 @@ export function getAllCakes() {
                 dispatch(cakesSuccess(cakes));
             })
             .then(() => {
-                dispatch(cakesFailed(null));
                 dispatch(cakesLoading(false));
             })
             .catch(err => {
@@ -34,7 +33,6 @@ export function getCakeById(id) {
                 dispatch(cakeSuccess(cake));
             })
             .then(() => {
-                dispatch(cakeFailed(null));
                 dispatch(cakeLoading(false));
             })
             .catch(err => {

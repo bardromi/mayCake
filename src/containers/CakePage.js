@@ -8,7 +8,7 @@ class CakePage extends Component {
     //     super(props)
     // }
 
-    componentWillMount() {
+    componentDidMount() {
         this.props.getCakeById(this.props.match.params.id);
     }
 

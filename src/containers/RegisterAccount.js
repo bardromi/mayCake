@@ -14,7 +14,7 @@ class RegisterAccount extends Component {
         }
     }
 
-    componentWillMount() {
+    componentDidMount() {
         if (this.props.auth.user) {
             this.props.history.push('/');
         }

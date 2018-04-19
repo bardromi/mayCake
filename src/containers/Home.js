@@ -13,7 +13,7 @@ class Home extends Component {
     //     }
     // }
 
-    componentWillMount() {
+    componentDidMount() {
         this.props.getAllCakes();
     }
 
