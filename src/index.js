@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {createLogger} from 'redux-logger';
 
 import registerServiceWorker from './registerServiceWorker';
 
@@ -14,12 +15,14 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import App from './components/App'
 import reducers from './reducers/index';
 
-const createStoreMiddleware = applyMiddleware(thunk)(createStore);
+const loggerMiddleware = createLogger();
+
+const createStoreMiddleware = applyMiddleware(thunk, loggerMiddleware)(createStore);
 
 ReactDOM.render(
     <Provider store={createStoreMiddleware(reducers)}>
         <Router>
-            <Route path="/" component={App} />
+            <Route path="/" component={App}/>
         </Router>
     </Provider>
     , document.getElementById('root')
