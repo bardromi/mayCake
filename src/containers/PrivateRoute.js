@@ -1,15 +1,15 @@
 import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
+import {Route, Redirect} from 'react-router-dom';
+import {connect} from 'react-redux';
 
-const PrivateRoute = ({ component: Component, user, ...rest }) => (
+const PrivateRoute = ({component: Component, user, ...rest}) => (
     <Route
         {...rest}
         render={props =>
             user ? (
                 <Component {...props} />
             ) : (
-                <Redirect to="/login" />
+                <Redirect to={{pathname: '/login', state: {from: props.location}}}/>
             )
         }
     />
