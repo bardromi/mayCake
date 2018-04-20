@@ -1,23 +1,22 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {Redirect} from 'react-router-dom';
+import React from 'react';
+import { Route, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-class AuthenticatedComponent extends Component {
-    componentDidUpdate() {
-        const {userLoading, user} = this.props;
-        if (userLoading === false && !user) {
-            this.props.history.push('/Login');
+const PrivateRoute = ({ component: Component, user, ...rest }) => (
+    <Route
+        {...rest}
+        render={props =>
+            user ? (
+                <Component {...props} />
+            ) : (
+                <Redirect to="/login" />
+            )
         }
-    }
+    />
+);
 
-    render() {
-        const {user, children, userLoading} = this.props;
-        return (userLoading === false && user) ? <div>{children}</div> :  <Redirect to={{ pathname: '/login', state: { from: this.props.location } }} />
-    }
-}
+const mapStateToProps = store => ({
+    user: store.auth.user
+});
 
-function mapStateToProps(state) {
-    return {user: state.auth.user, userLoading: state.auth.isLoading};
-}
-
-export default connect(mapStateToProps)(AuthenticatedComponent);
+export default connect(mapStateToProps)(PrivateRoute);
