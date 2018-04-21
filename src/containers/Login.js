@@ -22,8 +22,9 @@ class Login extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
+        const {from} = this.props.location.state || {from: {pathname: "/"}};
         if (nextProps.auth.user) {
-            nextProps.history.push('/');
+            nextProps.history.push(from);
         }
     }
 
@@ -37,7 +38,6 @@ class Login extends Component {
     }
 
     render() {
-
         //for validation error
         const errStyle = {
             borderColor: 'red'
