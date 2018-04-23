@@ -3,7 +3,7 @@ import {Switch, Route} from 'react-router-dom';
 import Login from '../containers/Login';
 import Home from '../containers/Home';
 import RegisterAccount from '../containers/RegisterAccount';
-import CakePage from '../containers/CakePage';
+import CakePage from '../containers/CakeDetails';
 import PrivateRoute from '../containers/PrivateRoute';
 
 // The Main component renders one of the three provided
@@ -18,7 +18,7 @@ const Main = () => (
             <Route path='/home' component={Home}/>
             <Route path='/login' component={Login}/>
             <Route path='/register' component={RegisterAccount}/>
-            <PrivateRoute path='/cake/:id' component={CakePage}/>
+            <Route path='/cake/:id' component={CakePage}/>
         </Switch>
     </main>
 );
