@@ -21,16 +21,16 @@ class CakeDetails extends Component {
             <div>
                 {/*<h1>CakeCard ID - {this.props.cake.id}</h1>*/}
                 <div className="row">
-                    <div className="col-sm">
-                        <div className="row">
-                            <img className="img-fluid rounded pt-5"
-                                 id="img-details"
+                    <div className="col-sm-6">
+                        <div className="row item">
+                            <img className="rounded pt-5"
+                                 id="img_details"
                                  src={this.props.cake.img}
                                  alt={this.props.cake.name}/>
                         </div>
                     </div>
-                    <div className="col-sm">
-
+                    <div className="col-sm-6 text-center">
+                        <h1>{this.props.cake.name}</h1>
                     </div>
                 </div>
             </div>
