@@ -36,6 +36,8 @@ export const UserAPI = {
     }
 };
 
+const desc = "עוגת שוקולד עשירה במיוחד";
+const gradiants = "";
 export const CakesAPI = {
     cakes: [
         {
@@ -43,6 +45,8 @@ export const CakesAPI = {
             category: "cake",
             name: "Chocolate Cake",
             img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAtutm6NaoBbTY5Vli75zaAWwwDKf7bfPecSBEhMHCvdSS3dJx",
+            description: desc,
+            gradiants: gradiants,
             likes: 1
         },
         {
@@ -50,6 +54,7 @@ export const CakesAPI = {
             category: "cake",
             name: "Cheese Cake",
             img: "http://img.taste.com.au/JykbG0mr/w643-h428-cfill-q90/taste/2016/11/new-york-cheesecake-40742-1.jpeg",
+            description:desc,
             likes: 22
         },
         {
@@ -57,6 +62,7 @@ export const CakesAPI = {
             category: "cake",
             name: "Black Cake",
             img: "https://www.fergusonplarre.com.au/media/catalog/product/cache/1/image/370x/9df78eab33525d08d6e5fb8d27136e95/P/o/Polka-Dot-Shoe-Cake.jpg",
+            description:desc,
             likes: 123
         },
         {
@@ -64,6 +70,7 @@ export const CakesAPI = {
             category: "cake",
             name: "White Cake",
             img: "http://images.media-allrecipes.com/userphotos/960x960/4482234.jpg",
+            description:desc,
             likes: 111
         },
         {
@@ -71,6 +78,7 @@ export const CakesAPI = {
             category: "cake",
             name: "Oreo Cake",
             img: "http://bakingbites.com/wp-content/uploads/2009/04/cookiecake.jpg",
+            description: desc,
             likes: 69
         },
         {
@@ -78,6 +86,7 @@ export const CakesAPI = {
             category: "cake",
             name: "Rainbow Cake",
             img: "https://www.fergusonplarre.com.au/media/catalog/product/cache/1/image/550x/9df78eab33525d08d6e5fb8d27136e95/b/i/birthday-pinata-cake--inside.jpg",
+            description: desc,
             likes: 2
         },
         {
@@ -85,6 +94,7 @@ export const CakesAPI = {
             category: "cake",
             name: "Car Cake",
             img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy0hYOjFHo5boh_0ULNtd4KG4Je_308pJUJk_505wmgTn8YkPU",
+            description: desc,
             likes: 10
         },
         {
@@ -92,6 +102,7 @@ export const CakesAPI = {
             category: "cake",
             name: "Heart Cake",
             img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJCyKc8egRAPnAHDqG44hzsnY72YDR20atic_RdTuApAecxaVz",
+            description: desc,
             likes: 1000
         },
     ],

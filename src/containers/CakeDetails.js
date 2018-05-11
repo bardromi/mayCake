@@ -29,8 +29,15 @@ class CakeDetails extends Component {
                                  alt={this.props.cake.name}/>
                         </div>
                     </div>
-                    <div className="col-sm-6 text-center">
-                        <h1>{this.props.cake.name}</h1>
+                    <div className="col-sm-6">
+                        <div className="text-center">
+                            <h1>{this.props.cake.name}</h1>
+                            <h3>{this.props.cake.description}</h3>
+                        </div>
+                        <br/>
+                        <div className="text-right">
+                            {this.props.cake.gradiants}
+                        </div>
                     </div>
                 </div>
             </div>
